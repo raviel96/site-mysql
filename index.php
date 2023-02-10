@@ -18,6 +18,7 @@
             <p>Bonne visite !</p>
         </div>
         <?php require('inc_menu.php')?>
+        <a href="admin.php">Administration</a>
         <?php require('inc_footer.php')?>
     </div>
 </body>
