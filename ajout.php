@@ -36,12 +36,13 @@
     <div>
         <h1>Ajouter une ville</h1>
         <?php if(isset($message)) echo $message ?>
-        <form method="post"></form>
-        <p>Nom de la ville : <input type="text" name="ville_nom"></p>
-        <p>Texte de présentation <br>
-            <textarea name="ville_text" cols="32" rows="8"></textarea>
-        </p>
-        <p><input type="submit" name="submit_form" value="valider"></p>
+        <form method="post">
+            <p>Nom de la ville : <input type="text" name="ville_nom"></p>
+            <p>Texte de présentation <br>
+                <textarea name="ville_text" cols="32" rows="8"></textarea>
+            </p>
+            <p><input type="submit" name="submit_form" value="valider"></p>
+        </form>
     </div>
 </body>
 </html>

@@ -36,13 +36,22 @@
     <div>
         <h1>Ajouter une ville</h1>
         <?php if(isset($message)) echo $message?>
-        <form method="post"></form>
-        <p>Nom de la ville : <input type="text" name="ville_nom" value="<?php echo $nom?>"></p>
-        <p>Texte de présentation <br>
-            <textarea name="ville_text" cols="32" rows="8"><?php echo $text?></textarea>
-        </p>
-        <input type="hidden" name="ville_id" value="<?php echo $id?>">
-        <p><input type="submit" name="submit_form" value="valider"></p>
+        <form method="post">
+            <p>Nom de la ville : <input type="text" name="ville_nom" value="<?php echo $nom?>"></p>
+            <p>Texte de présentation <br>
+                <textarea name="ville_text" cols="32" rows="8"><?php echo $text?></textarea>
+            </p>
+            <input type="hidden" name="ville_id" value="<?php echo $id?>">
+            <p><input type="submit" name="submit_form" value="valider"></p>
+        </form>
     </div>
+    <?php 
+        $result = $mysqli->query('SELECT pays.pays_id, pays_nom FROM pays INNER JOIN villes WHERE villes.pays_id = pays.pays_id GROUP BY pays_nom ORDER BY pays_nom');
+    ?>
+    <ul>
+    <?php foreach($pays_liste as $id => $pays) {?>
+        <li><a href="pays.php?id=<?php echo $id ?>"><?php echo $pays ?></a></li>
+    <?php }?>
+    </ul>
 </body>
 </html>
