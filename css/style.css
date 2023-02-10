@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    width: 40%;
+}
